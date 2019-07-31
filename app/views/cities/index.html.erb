@@ -5,10 +5,12 @@
 <h1 class="title">Топ <span class="number">5</span> самых просматриваемых городов:</h1>
 
   <div class="cards">
+    <% 5.times do %>
     <div class="card">
-    <%= link_to city_path(13) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Город 1
+    <%a = rand(100) %>
+    <%= link_to city_path(a) do %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @cities.where(id: a).first.photo %>)">
+      <%= @cities.where(id: a).first.name %>
     </div>
     <% end %>
        <div class="card-info">
@@ -20,96 +22,8 @@
           <% end %>
         </div>
       </div>
-
-  <div class="card">
-    <%= link_to city_path(13) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-      Город 2
-    </div>
     <% end %>
-      <div class="card-info">
-          <h2>Экскурсии:</h2>
-          <% 10.times do %>
-            <%= link_to activity_path(1) do %>
-              <p>Экскурсия</p>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-
-  <div class="card">
-    <%= link_to city_path(1) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Город 3
-    </div>
-    <% end %>
-      <div class="card-info">
-          <h2>Экскурсии:</h2>
-          <% 10.times do %>
-            <%= link_to activity_path(1) do %>
-              <p>Экскурсия</p>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-
-  <div class="card">
-    <%= link_to city_path(1) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Город 4
-    </div>
-     <% end %>
-      <div class="card-info">
-          <h2>Экскурсии:</h2>
-          <% 10.times do %>
-            <%= link_to activity_path(1) do %>
-              <p>Экскурсия</p>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
-  <div class="card">
-    <%= link_to city_path(1) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-      Город 5
-    </div>
-     <% end %>
-      <div class="card-info">
-          <h2>Экскурсии:</h2>
-          <% 10.times do %>
-            <%= link_to activity_path(1) do %>
-              <p>Экскурсия</p>
-            <% end %>
-          <% end %>
-        </div>
-      </div>
 
   </div>
 
 
-<!-- <table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Photo</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cities.each do |city| %>
-      <tr>
-        <td><%= city.name %></td>
-        <td><%= city.photo %></td>
-        <td><%= link_to 'Show', city %></td>
-        <td><%= link_to 'Edit', edit_city_path(city) %></td>
-        <td><%= link_to 'Destroy', city, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New City', new_city_path %>
- -->

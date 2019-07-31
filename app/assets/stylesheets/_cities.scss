@@ -108,11 +108,12 @@
     justify-content: center;
     align-items: center;
     color: white;
-    font-size: 24px;
+    font-size: 48px;
     font-weight: bold;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    font-family: 'Amatic SC', cursive, bold;
   }
 
   .card{
@@ -146,6 +147,9 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 32px;
   font-weight: bold;
+  text-align: center;
+  font-size: 84px;
+  font-family: 'Amatic SC', cursive, bold;
 }
 
 .banner p {
