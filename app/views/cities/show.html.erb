@@ -1,14 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @city.name %>
-</p>
 
 <p>
   <strong>Photo:</strong>
   <%= @city.photo %>
 </p>
 
-<%= link_to 'Edit', edit_city_path(@city) %> |
-<%= link_to 'Back', root_path %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><strong>Name:</strong>
+  <%= @city.name %></h1>
+  </div>
+</div>
+
+<div class="cards_show">
+  <% 30.times do %>
+    <%= link_to activity_path(1) do %>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+   <% end %>
+  <% end %>
+</div>
+
+<h1 class="title"><%= link_to 'На Главную', root_path %></h1>

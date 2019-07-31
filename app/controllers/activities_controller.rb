@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-before_action :set_city
+
 
   def show
     @activity = Activity.find(params[:id])
