@@ -1,27 +1,9 @@
+http.ssl_version = :TLSv1
+http.ciphers = ['DES-CBC3-SHA']
 
 require 'json'
 require 'open-uri'
 require 'csv'
-
-
-
-link_to_the_array = 'https://api.sputnik8.com/v1/cities?api_key=fe8cde00637a56c54f7a991682cac93e&username=efimshliamin@gmail.com'
-cities_serialized = open(link_to_the_array).read
-cities_array = JSON.parse(cities_serialized)
-
-puts "Creating cities database"
-
-cities_array.each do |item|
-  puts "Creating city with item #{item}"
-  url = "https://api.sputnik8.com/v1/cities/#{item["id"]}?api_key=fe8cde00637a56c54f7a991682cac93e&username=efimshliamin@gmail.com"
-  city_serialized = open(url).read
-  city = JSON.parse(city_serialized)
-
-  City.create(id: item["id"], name: city["name"], photo: city["geo"]["description"]["image"])
-end
-
-
-
 
 puts "Creating activities database"
 
@@ -71,6 +53,25 @@ puts "Creating activities database"
     end
 
 
+
+
+
+
+
+  link_to_the_array = 'https://api.sputnik8.com/v1/cities?api_key=fe8cde00637a56c54f7a991682cac93e&username=efimshliamin@gmail.com'
+  cities_serialized = open(link_to_the_array).read
+  cities_array = JSON.parse(cities_serialized)
+
+  puts "Creating cities database"
+
+  cities_array.each do |item|
+    puts "Creating city with item #{item}"
+    url = "https://api.sputnik8.com/v1/cities/#{item["id"]}?api_key=fe8cde00637a56c54f7a991682cac93e&username=efimshliamin@gmail.com"
+    city_serialized = open(url).read
+    city = JSON.parse(city_serialized)
+
+    City.create(id: item["id"], name: city["name"], photo: city["geo"]["description"]["image"])
+  end
 
 
 
