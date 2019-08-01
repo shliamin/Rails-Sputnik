@@ -14,12 +14,14 @@
     </div>
     <% end %>
        <div class="card-info">
-          <h2>Чем заняться:</h2>
-          <% 10.times do %>
-            <%= link_to activity_path(1) do %>
-              <p>Экскурсия</p>
-            <% end %>
-          <% end %>
+          <h2>Чем заняться в городе <%= @cities.where(id: a).first.name %> :</h2>
+
+              <p><% @activities.where(city_id: 1).first(10).each do |item| %></p>
+                <%= link_to activity_path(item.id) do %>
+                  <%= item.title %>
+                <% end %>
+              <% end %>
+
         </div>
       </div>
     <% end %>

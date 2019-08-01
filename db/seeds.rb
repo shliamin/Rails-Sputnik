@@ -1,16 +1,13 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-
-# require 'json'
-# require 'open-uri'
 
 
-#Необходимо взять массив и для каждого элемента массива получить его id.
-#Это будет id каждго конкретного города, которое затем нужно будет с помощью
-#интерполяции вставить в url:
+require 'json'
+require 'open-uri'
 
-#Миграция в базе данных не произойдет, если не очистить ее, так как
-#миграция не производится, если уже имеются одинаковые id.
+# We need to take all the elements ids from array.
+# This is the id for each city.
+# Then we are using interpolation
+
+# Creating db for all cities:
 
 link_to_the_array = 'https://api.sputnik8.com/v1/cities?api_key=db6584760c51a71d1c5124c95adb9829&username=shliamin@icloud.com'
 cities_serialized = open(link_to_the_array).read
@@ -26,6 +23,8 @@ cities_array.each do |item|
   City.create(id: item["id"], name: city["name"], photo: city["geo"]["description"]["image"])
 end
 
+# Creating db for all activities. What is the activity_id?
+
 link_to_all_activities = 'https://api.sputnik8.com/v1/products?api_key=db6584760c51a71d1c5124c95adb9829&username=shliamin@icloud.com'
 activities_serialized = open(link_to_all_activities).read
 activities_array = JSON.parse(activities_serialized)
@@ -37,5 +36,12 @@ activities_array.each do |activity_item|
   activity_serialized = open(url_activities).read
   activity = JSON.parse(activity_serialized)
 
-  Activity.create(id: activity_item["id"], title: activity["title"], )
+# id: activity_item["id"]  or  id: activity["id"]
+  Activity.create(id: activity["id"], title: activity["title"], description: activity["description"], photo: activity["cover_photo"]["original"], price: activity["netto_price"], city_id: activity["geo"]["city"]["id"])
 end
+
+  # url_activities = "https://api.sputnik8.com/v1/products/23791?api_key=db6584760c51a71d1c5124c95adb9829&username=shliamin@icloud.com"
+  # activity_serialized = open(url_activities).read
+  # activity = JSON.parse(activity_serialized)
+
+

@@ -3,11 +3,15 @@ class CitiesController < ApplicationController
 
   # GET /cities
   def index
+# All cities here:
     @cities = City.all
+# All activities here:
+    @activities = Activity.all
   end
 
   # GET /cities/1
   def show
+    @activities = Activity.all
   end
 
   # GET /cities/new

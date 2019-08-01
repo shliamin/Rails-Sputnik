@@ -12,14 +12,22 @@
   </div>
 </div>
 
+<h1 class = "header_activities"><strong>Все экскурсии в городе <%= @city.name %>:</strong></h1>
+
 <div class="cards_show">
-  <% 30.times do %>
-    <%= link_to activity_path(1) do %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
-   <% end %>
+
+
+<% 3.times do %>
+  <% @activities.where(city_id: 1).first(10).each do |item| %>
+    <%= link_to activity_path(item.id) do %>
+       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)">
+          <p><%= item.title %></p>
+      </div>
+    <% end %>
   <% end %>
+<% end %>
+
+
 </div>
 
 <h1 class="title"><%= link_to 'На Главную', root_path %></h1>

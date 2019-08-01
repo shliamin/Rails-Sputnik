@@ -7,6 +7,7 @@
   text-align: center;
   font-size: 40px;
   font-family: 'Amatic SC', cursive, bold;
+  text-decoration: none;
   }
 
 .number{
@@ -114,7 +115,17 @@
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     font-family: 'Amatic SC', cursive, bold;
+
+    p{
+      font-size: 24px;
+      text-decoration: none;
+    }
   }
+
+  .card-category:hover{
+      transform: scale(1.02);
+      transition: 1.2s;
+    }
 
   .card{
     height: 600px;
@@ -122,13 +133,16 @@
 
   .card-info{
     height: 180px;
+    font-family: 'Open Sans Condensed', sans-serif;
     h2{
       text-align: center;
       font-family: 'Amatic SC', cursive, bold;
+      text-decoration: none;
     }
 
     p{
-
+      font-family: 'Open Sans Condensed', sans-serif;
+      text-decoration: none;
     }
   }
 
@@ -151,6 +165,7 @@
   text-align: center;
   font-size: 84px;
   font-family: 'Amatic SC', cursive, bold;
+  text-decoration: none;
 }
 
 .banner p {
@@ -158,6 +173,7 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  text-decoration: none;
 }
 
 .card-trip {
@@ -167,7 +183,7 @@
 }
 
 .card-trip > img {
-  height: 200px;
+  height: 400px;
   width: 100%;
   object-fit: cover;
 }
@@ -176,12 +192,14 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-trip p {
   font-size: 12px;
   opacity: .7;
   margin: 0;
+  text-decoration: none;
 }
 
 .card-trip .card-trip-infos {
@@ -190,6 +208,27 @@
   justify-content: space-between;
   align-items: flex-end;
   position: relative;
+  margin-bottom: 25px;
+  margin-top: 25px;
+  margin-right: 10px;
+
+  h2{
+    font-size: 24px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin-bottom: 25px;
+    text-decoration: none;
+  }
+
+  p{
+    font-size: 20px;
+    font-family: 'Open Sans Condensed', sans-serif;
+    text-decoration: none;
+  }
+}
+
+.header_activities{
+  font-family: 'Open Sans Condensed', sans-serif;
+  text-align: center;
 }
 
 .card-trip-infos .card-trip-user {
@@ -197,4 +236,9 @@
   right: 16px;
   top: -20px;
   width: 40px;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
 }
