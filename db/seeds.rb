@@ -39,9 +39,9 @@ puts "Creating activities database"
 
   array_ids = []
 
-  (1..1).each do |i|
+  (1..91).each do |i|
 
-    puts "Adding list of ids from page № #{i} from 1"
+    puts "Adding list of ids from page № #{i} from 91"
 
     link_to_all_activities = "https://api.sputnik8.com/v1/products?api_key=fe8cde00637a56c54f7a991682cac93e&username=efimshliamin@gmail.com&page=#{i}"
     activities_serialized = open(link_to_all_activities).read
