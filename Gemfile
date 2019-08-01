@@ -4,6 +4,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 # gem 'aws-s3', :require => 'aws/s3'
 # gem "<aws-sdk></aws-sdk>-s3", require: false
+gem 'will_paginate'
+gem 'api-pagination'
+
 gem 'simple_form'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_01_053543) do
+ActiveRecord::Schema.define(version: 2019_08_01_102454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_08_01_053543) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "rating"
+    t.integer "view_id"
     t.index ["city_id"], name: "index_activities_on_city_id"
   end
 
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_08_01_053543) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "view_id"
   end
 
   add_foreign_key "activities", "cities"
