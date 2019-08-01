@@ -14,6 +14,12 @@ class CitiesController < ApplicationController
     @activities = Activity.all
   end
 
+  def city_views
+    @city.activities.each do |item|
+      @city.view_id += item.view_id
+    end
+  end
+
   # GET /cities/new
   def new
     @city = City.new

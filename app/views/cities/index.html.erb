@@ -1,31 +1,32 @@
 
 <p id="notice"><%= notice %></p>
 
-
 <h1 class="title">Топ <span class="number">5</span> самых просматриваемых городов:</h1>
 
-  <div class="cards">
-    <% 5.times do %>
+<div class="cards">
+  <%@activities.order(:view_id).last(5).each do |h|%>
     <div class="card">
-    <%a = rand(100) %>
-    <%= link_to city_path(a) do %>
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @cities.where(id: a).first.photo %>)">
-      <%= @cities.where(id: a).first.name %>
-    </div>
-    <% end %>
-       <div class="card-info">
-          <h2>Чем заняться в городе <%= @cities.where(id: a).first.name %> :</h2>
+      <%@cities.where(id: h.city.id).each do |c| %>
+        <%= link_to city_path(c.id) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= @cities.where(id: c.id).first.photo %>)">
+            <%= c.name %>
+          </div>
 
-              <p><% @activities.where(city_id: 1).first(10).each do |item| %></p>
-                <%= link_to activity_path(item.id) do %>
-                  <%= item.title %>
-                <% end %>
+          <div class="card-info">
+            <h2>Самое интересное в городе <%= @cities.where(id: c.id).first.name %>:</h2>
+            <p><% @activities.where(city_id: c.id).order(:view_id).last(10).reverse.each do |item|%></p>
+            <%= link_to activity_path(item.id) do %>
+              <div class="card-product">
+                <img src="<%=item.photo%>"/>
+                  <div class="card-product-infos">
+                    <h2><%= item.title %></h2>
+                  </div>
+              </div>
               <% end %>
-
-        </div>
-      </div>
-    <% end %>
-
-  </div>
-
-
+            <% end %>
+          </div>
+        <%end%>
+      <%end%>
+    </div>
+  <%end%>
+</div>

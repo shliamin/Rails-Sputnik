@@ -1,6 +1,11 @@
 // Place all the styles related to the Cities controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  background-color: #FCF5E8;
+}
+
 .title{
   display: flex;
   justify-content: center;
@@ -128,11 +133,11 @@
     }
 
   .card{
-    height: 600px;
+    height: 850px;
   }
 
   .card-info{
-    height: 180px;
+    height: 550px;
     font-family: 'Open Sans Condensed', sans-serif;
     h2{
       text-align: center;
@@ -241,4 +246,44 @@
 a:hover, a:visited, a:link, a:active
 {
     text-decoration: none;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 45px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.card-product:hover {
+  background-color: #FEE0D3;
+  transition: 1.2s;
+}
+
+.card-product img {
+  height: 100%;
+  width: 45px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: black;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
 }
