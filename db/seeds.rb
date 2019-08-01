@@ -1,5 +1,4 @@
-http.ssl_version = :TLSv1
-http.ciphers = ['DES-CBC3-SHA']
+
 
 require 'json'
 require 'open-uri'
