@@ -26,5 +26,16 @@ cities_array.each do |item|
   City.create(id: item["id"], name: city["name"], photo: city["geo"]["description"]["image"])
 end
 
+link_to_all_activities = 'https://api.sputnik8.com/v1/products?api_key=db6584760c51a71d1c5124c95adb9829&username=shliamin@icloud.com'
+activities_serialized = open(link_to_all_activities).read
+activities_array = JSON.parse(activities_serialized)
 
+puts "Creating activities database"
 
+activities_array.each do |activity_item|
+  url_activities = "https://api.sputnik8.com/v1/products/#{activity_item["id"]}?api_key=db6584760c51a71d1c5124c95adb9829&username=shliamin@icloud.com"
+  activity_serialized = open(url_activities).read
+  activity = JSON.parse(activity_serialized)
+
+  Activity.create(id: activity_item["id"], title: activity["title"], )
+end
