@@ -14,3 +14,21 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+ document.querySelector('#sort-asc').onclick = mySort();
+
+function mySort(){
+  let nav = document.querySelector('.cards-show');
+  for (let i = 0; i < nav.children.length; i++){
+    for (let j = 1; j< nav.children.length; j++){
+      if(+nav.children[i].getAttribute('data-sort-price') > +nav.children[j].getAttribute('data-sort-price')){
+          replacedNode = nav.replaceChild(nav.children[j], nav.children[i]);
+          insertAfter(replacedNode, nav.children[i]);
+      }
+    }
+  }
+}
+
+function insertAfter(elem, refElem){
+  return refElem.parentNode.insertBefore(elem, refElem.nextSibling);
+}

@@ -1,10 +1,6 @@
+
+
 <p id="notice"><%= notice %></p>
-
-
-<!-- <p>
-  <strong>Photo:</strong>
-  <%= @city.photo %>
-</p> -->
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @city.photo %>);">
   <div class="container">
@@ -14,20 +10,21 @@
 
 <h1 class = "header_activities"><strong>Все экскурсии в городе <%= @city.name %>: </strong></h1>
 
+<button id="sort-asc">Цена возрастания</button>
+<button id="sort-asc">По просмотрам</button>
+<button id="sort-asc">По рейтингу</button>
 
 <div class="cards_show">
-
-
   <% @activities.where(city_id: @city.id).each do |item| %>
     <%= link_to activity_path(item.id) do %>
-       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)">
-          <p><%= item.title %></p>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)" data-sort-price="<%= item.price%>">
+        <p><%= item.title %></p>
+        <p><%= item.price %></p>
       </div>
-    <% end %>
-  <% end %>
-
-
-
+    <%end%>
+  <%end%>
 </div>
 
 <h1 class="title"><%= link_to 'На Главную', root_path %></h1>
+
+
