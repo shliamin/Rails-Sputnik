@@ -59,7 +59,7 @@ class CitiesController < ApplicationController
 
   # Calculate total views for the city
   def calculate_city_views
-    @city.view_id = @city.activities.sum(:view_id)
+    @city.update(view_id: @city.activities.sum(:view_id))
   end
 
   # Only allow a trusted parameter "white list" through.
