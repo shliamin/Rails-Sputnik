@@ -8,16 +8,11 @@
 
 <h1 class="header_activities"><strong>All activities in <%= @city.name %>:</strong></h1>
 
-<button id="sort-price-asc">Sort by Price (Asc)</button>
-<button id="sort-views">Sort by Views</button>
-<button id="sort-rating">Sort by Rating</button>
-
 <div class="cards_show">
   <% @activities.where(city_id: @city.id).each do |item| %>
     <%= link_to activity_path(item.id) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)" data-sort-price="<%= item.price %>" data-sort-views="<%= item.view_id %>" data-sort-rating="<%= item.rating %>">
         <p><%= item.title %></p>
-        <p><%= item.price %> USD</p>
       </div>
     <% end %>
   <% end %>
