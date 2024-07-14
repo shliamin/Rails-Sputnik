@@ -1,0 +1,39 @@
+{
+    "settings": {
+      "index": {
+        "number_of_shards": 1,
+        "number_of_replicas": 1
+      }
+    },
+    "mappings": {
+      "properties": {
+        "title": {
+          "type": "text",
+          "analyzer": "english"
+        },
+        "description": {
+          "type": "text",
+          "analyzer": "english"
+        },
+        "photo": {
+          "type": "keyword"
+        },
+        "price": {
+          "type": "double"
+        },
+        "rating": {
+          "type": "double"
+        },
+        "created_at": {
+          "type": "date"
+        },
+        "updated_at": {
+          "type": "date"
+        },
+        "city_id": {
+          "type": "integer"
+        }
+      }
+    }
+  }
+  
