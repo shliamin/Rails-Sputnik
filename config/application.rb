@@ -17,3 +17,6 @@ module Sputnik
     # the framework and any gems in your application.
   end
 end
+
+# Ensure Elasticsearch is required before initializers
+require 'elasticsearch/model'
