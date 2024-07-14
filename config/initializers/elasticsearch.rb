@@ -4,6 +4,7 @@ Elasticsearch::Model.client = Elasticsearch::Client.new(
   url: ENV['BONSAI_URL'],
   log: true,
   transport_options: {
-    request: { timeout: 5 }
+    request: { timeout: 5 },
+    headers: { 'X-elastic-product-origin' => 'elasticsearch' }
   }
 )
