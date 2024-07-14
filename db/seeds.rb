@@ -15,6 +15,10 @@ def get_photo(query)
   nil
 end
 
+# Clear existing data
+Activity.delete_all
+City.delete_all
+
 # Downloading JSON file with cities and activities 
 file_path = Rails.root.join('db', 'cities_activities.json')
 cities_activities = JSON.parse(File.read(file_path))
