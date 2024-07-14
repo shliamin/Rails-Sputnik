@@ -1,5 +1,7 @@
 # Sputnik
 
+### Efim Shliamin
+
 ## Overview
 
 The Sputnik project is a comprehensive Ruby on Rails application designed to showcase backend services integration and database management. It is ideal for developers looking to deepen their understanding of complex backend systems and how they interact with different technologies.

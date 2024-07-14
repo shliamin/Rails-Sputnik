@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2019_08_01_223157) do
     t.string "photo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "description" # Добавленное поле description
     t.integer "view_id"
   end
 

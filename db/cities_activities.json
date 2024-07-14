@@ -1,0 +1,173 @@
+[
+    {
+      "id": 1,
+      "name": "London",
+      "description": "The capital city of England, known for its rich history and vibrant culture.",
+      "activities": [
+        {"id": 1, "title": "London Eye", "description": "Enjoy a breathtaking view of London from the iconic Ferris wheel.", "price": 30, "rating": 4.8},
+        {"id": 2, "title": "Tower of London", "description": "Explore the historic castle and see the Crown Jewels.", "price": 25, "rating": 4.7},
+        {"id": 3, "title": "Buckingham Palace", "description": "Witness the Changing of the Guard at the royal residence.", "price": 20, "rating": 4.6},
+        {"id": 4, "title": "British Museum", "description": "Discover artifacts from around the world at this famous museum.", "price": 0, "rating": 4.9},
+        {"id": 5, "title": "Hyde Park", "description": "Relax in one of London's largest and most beautiful parks.", "price": 0, "rating": 4.5},
+        {"id": 6, "title": "West End Theatre", "description": "Enjoy a world-class theatre performance in London's West End.", "price": 50, "rating": 4.9},
+        {"id": 7, "title": "Thames River Cruise", "description": "Take a scenic boat cruise along the River Thames.", "price": 40, "rating": 4.7},
+        {"id": 8, "title": "Camden Market", "description": "Shop for unique items at the bustling Camden Market.", "price": 0, "rating": 4.6},
+        {"id": 9, "title": "Natural History Museum", "description": "Explore exhibits about the natural world.", "price": 0, "rating": 4.8},
+        {"id": 10, "title": "Kew Gardens", "description": "Visit the Royal Botanic Gardens at Kew.", "price": 15, "rating": 4.7}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Berlin",
+      "description": "The capital city of Germany, known for its history and modern attractions.",
+      "activities": [
+        {"id": 11, "title": "Brandenburg Gate", "description": "Visit the iconic symbol of Berlin.", "price": 0, "rating": 4.8},
+        {"id": 12, "title": "Berlin Wall Memorial", "description": "Learn about the history of the Berlin Wall.", "price": 0, "rating": 4.7},
+        {"id": 13, "title": "Museum Island", "description": "Explore museums with art and historical artifacts.", "price": 20, "rating": 4.9},
+        {"id": 14, "title": "Reichstag Building", "description": "Visit the German parliament building with its glass dome.", "price": 0, "rating": 4.8},
+        {"id": 15, "title": "Berlin Zoo", "description": "See a wide variety of animals at the Berlin Zoo.", "price": 15, "rating": 4.6},
+        {"id": 16, "title": "East Side Gallery", "description": "View the murals on the longest remaining section of the Berlin Wall.", "price": 0, "rating": 4.7},
+        {"id": 17, "title": "Checkpoint Charlie", "description": "Visit the famous Cold War border crossing point.", "price": 0, "rating": 4.5},
+        {"id": 18, "title": "Pergamon Museum", "description": "See the impressive collection of ancient artifacts.", "price": 15, "rating": 4.8},
+        {"id": 19, "title": "Charlottenburg Palace", "description": "Tour the stunning baroque palace.", "price": 12, "rating": 4.7},
+        {"id": 20, "title": "Tiergarten", "description": "Relax in Berlin's most popular inner-city park.", "price": 0, "rating": 4.6}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Paris",
+      "description": "The capital city of France, known for its art, fashion, and culture.",
+      "activities": [
+        {"id": 21, "title": "Eiffel Tower", "description": "Climb the iconic landmark for a view of Paris.", "price": 25, "rating": 4.9},
+        {"id": 22, "title": "Louvre Museum", "description": "Explore the world-famous art museum.", "price": 15, "rating": 4.8},
+        {"id": 23, "title": "Notre-Dame Cathedral", "description": "Visit the historic cathedral.", "price": 0, "rating": 4.7},
+        {"id": 24, "title": "Montmartre", "description": "Wander through the artistic district of Paris.", "price": 0, "rating": 4.8},
+        {"id": 25, "title": "Seine River Cruise", "description": "Take a boat cruise along the Seine River.", "price": 20, "rating": 4.7},
+        {"id": 26, "title": "Champs-Élysées", "description": "Shop and dine along the famous avenue.", "price": 0, "rating": 4.6},
+        {"id": 27, "title": "Versailles Palace", "description": "Tour the opulent palace and gardens.", "price": 18, "rating": 4.9},
+        {"id": 28, "title": "Sainte-Chapelle", "description": "See the stunning stained glass windows.", "price": 10, "rating": 4.8},
+        {"id": 29, "title": "Luxembourg Gardens", "description": "Relax in the beautiful gardens.", "price": 0, "rating": 4.7},
+        {"id": 30, "title": "Opera Garnier", "description": "Visit the grand opera house.", "price": 15, "rating": 4.8}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Madrid",
+      "description": "The capital city of Spain, known for its vibrant nightlife and cultural sites.",
+      "activities": [
+        {"id": 31, "title": "Prado Museum", "description": "Explore Spain's premier art museum.", "price": 15, "rating": 4.9},
+        {"id": 32, "title": "Royal Palace", "description": "Visit the official residence of the Spanish Royal Family.", "price": 12, "rating": 4.8},
+        {"id": 33, "title": "Retiro Park", "description": "Relax in Madrid's most famous park.", "price": 0, "rating": 4.7},
+        {"id": 34, "title": "Santiago Bernabéu Stadium", "description": "Tour the home of Real Madrid football club.", "price": 20, "rating": 4.8},
+        {"id": 35, "title": "Thyssen-Bornemisza Museum", "description": "See the art collection of the Thyssen-Bornemisza family.", "price": 15, "rating": 4.7},
+        {"id": 36, "title": "Puerta del Sol", "description": "Visit the bustling public square.", "price": 0, "rating": 4.6},
+        {"id": 37, "title": "Plaza Mayor", "description": "Explore the historic main square of Madrid.", "price": 0, "rating": 4.7},
+        {"id": 38, "title": "Gran Via", "description": "Walk along Madrid's most famous street.", "price": 0, "rating": 4.6},
+        {"id": 39, "title": "Temple of Debod", "description": "Visit the ancient Egyptian temple.", "price": 0, "rating": 4.8},
+        {"id": 40, "title": "El Rastro", "description": "Shop at the famous open-air flea market.", "price": 0, "rating": 4.5}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Rome",
+      "description": "The capital city of Italy, known for its nearly 3,000 years of globally influential art, architecture, and culture.",
+      "activities": [
+        {"id": 41, "title": "Colosseum", "description": "Visit the iconic ancient amphitheater.", "price": 20, "rating": 4.9},
+        {"id": 42, "title": "Vatican Museums", "description": "Explore the vast art collections of the Vatican.", "price": 17, "rating": 4.8},
+        {"id": 43, "title": "Pantheon", "description": "See the former Roman temple, now a church.", "price": 0, "rating": 4.8},
+        {"id": 44, "title": "Trevi Fountain", "description": "Throw a coin into the famous fountain.", "price": 0, "rating": 4.7},
+        {"id": 45, "title": "Roman Forum", "description": "Walk through the ruins of ancient Rome's center.", "price": 12, "rating": 4.8},
+        {"id": 46, "title": "Piazza Navona", "description": "Relax at one of Rome's most famous squares.", "price": 0, "rating": 4.7},
+        {"id": 47, "title": "St. Peter's Basilica", "description": "Visit the world's largest church.", "price": 0, "rating": 4.9},
+        {"id": 48, "title": "Sistine Chapel", "description": "See Michelangelo's famous ceiling frescoes.", "price": 17, "rating": 4.9},
+        {"id": 49, "title": "Castel Sant'Angelo", "description": "Tour the historic castle and its museum.", "price": 15, "rating": 4.6},
+        {"id": 50, "title": "Villa Borghese", "description": "Stroll through the beautiful gardens and visit the art gallery.", "price": 12, "rating": 4.7}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Amsterdam",
+      "description": "The capital city of the Netherlands, known for its artistic heritage, elaborate canal system, and narrow houses with gabled facades.",
+      "activities": [
+        {"id": 51, "title": "Anne Frank House", "description": "Visit the house where Anne Frank wrote her diary.", "price": 10, "rating": 4.8},
+        {"id": 52, "title": "Van Gogh Museum", "description": "Explore the largest collection of Van Gogh's works.", "price": 15, "rating": 4.9},
+        {"id": 53, "title": "Rijksmuseum", "description": "Discover Dutch art and history from the Middle Ages to the present day.", "price": 17, "rating": 4.8},
+        {"id": 54, "title": "Vondelpark", "description": "Relax in the largest city park in Amsterdam.", "price": 0, "rating": 4.7},
+        {"id": 55, "title": "Canal Cruise", "description": "Take a boat tour through Amsterdam's famous canals.", "price": 20, "rating": 4.8},
+        {"id": 56, "title": "Dam Square", "description": "Visit the central square of Amsterdam.", "price": 0, "rating": 4.6},
+        {"id": 57, "title": "Heineken Experience", "description": "Tour the former brewery of the famous Dutch beer.", "price": 18, "rating": 4.7},
+        {"id": 58, "title": "Red Light District", "description": "Explore Amsterdam's most famous neighborhood.", "price": 0, "rating": 4.5},
+        {"id": 59, "title": "NEMO Science Museum", "description": "Enjoy interactive exhibits at the science museum.", "price": 17, "rating": 4.6},
+        {"id": 60, "title": "Jordaan", "description": "Wander through the charming streets of the Jordaan neighborhood.", "price": 0, "rating": 4.7}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Oslo",
+      "description": "The capital city of Norway, known for its green spaces and museums.",
+      "activities": [
+        {"id": 61, "title": "Vigeland Park", "description": "Explore the world's largest sculpture park made by a single artist.", "price": 0, "rating": 4.8},
+        {"id": 62, "title": "Akershus Fortress", "description": "Visit the medieval castle and fortress.", "price": 0, "rating": 4.7},
+        {"id": 63, "title": "Munch Museum", "description": "See the works of the famous Norwegian artist Edvard Munch.", "price": 12, "rating": 4.6},
+        {"id": 64, "title": "Viking Ship Museum", "description": "Discover well-preserved Viking ships and artifacts.", "price": 15, "rating": 4.8},
+        {"id": 65, "title": "Holmenkollen Ski Museum", "description": "Learn about the history of skiing and visit the observation deck.", "price": 20, "rating": 4.7},
+        {"id": 66, "title": "Oslo Opera House", "description": "Attend a performance or walk on the roof of this architectural masterpiece.", "price": 30, "rating": 4.8},
+        {"id": 67, "title": "Fram Museum", "description": "Explore the polar exploration vessel Fram.", "price": 10, "rating": 4.7},
+        {"id": 68, "title": "Kon-Tiki Museum", "description": "Learn about Thor Heyerdahl's famous expeditions.", "price": 10, "rating": 4.6},
+        {"id": 69, "title": "Norwegian Folk Museum", "description": "Visit the open-air museum with traditional buildings.", "price": 15, "rating": 4.7},
+        {"id": 70, "title": "Bygdøy Peninsula", "description": "Explore the beautiful peninsula with several museums and beaches.", "price": 0, "rating": 4.6}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Stockholm",
+      "description": "The capital city of Sweden, known for its beautiful archipelago and rich history.",
+      "activities": [
+        {"id": 71, "title": "Vasa Museum", "description": "See the well-preserved 17th-century ship.", "price": 15, "rating": 4.8},
+        {"id": 72, "title": "Gamla Stan", "description": "Wander through the charming old town.", "price": 0, "rating": 4.7},
+        {"id": 73, "title": "Skansen", "description": "Visit the open-air museum and zoo.", "price": 20, "rating": 4.8},
+        {"id": 74, "title": "Stockholm Palace", "description": "Tour the official residence of the Swedish monarch.", "price": 15, "rating": 4.7},
+        {"id": 75, "title": "ABBA Museum", "description": "Learn about the famous Swedish pop group.", "price": 25, "rating": 4.8},
+        {"id": 76, "title": "Fotografiska", "description": "Explore the contemporary photography museum.", "price": 18, "rating": 4.7},
+        {"id": 77, "title": "Djurgården", "description": "Enjoy the beautiful island with parks and museums.", "price": 0, "rating": 4.8},
+        {"id": 78, "title": "Royal Swedish Opera", "description": "Attend a performance at the grand opera house.", "price": 30, "rating": 4.9},
+        {"id": 79, "title": "Nobel Museum", "description": "Learn about the Nobel Prize and its laureates.", "price": 12, "rating": 4.7},
+        {"id": 80, "title": "Stortorget", "description": "Visit the historic square in the old town.", "price": 0, "rating": 4.6}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Athens",
+      "description": "The capital city of Greece, known for its ancient landmarks and vibrant culture.",
+      "activities": [
+        {"id": 81, "title": "Acropolis", "description": "Visit the ancient citadel and the Parthenon.", "price": 20, "rating": 4.9},
+        {"id": 82, "title": "Acropolis Museum", "description": "Explore the museum dedicated to the findings of the Acropolis.", "price": 10, "rating": 4.8},
+        {"id": 83, "title": "Ancient Agora", "description": "Discover the ruins of the ancient marketplace.", "price": 8, "rating": 4.7},
+        {"id": 84, "title": "Plaka", "description": "Wander through the charming old neighborhood.", "price": 0, "rating": 4.7},
+        {"id": 85, "title": "Temple of Olympian Zeus", "description": "See the remains of the massive temple.", "price": 6, "rating": 4.6},
+        {"id": 86, "title": "National Archaeological Museum", "description": "Explore one of the world's greatest museums of ancient Greek art.", "price": 10, "rating": 4.8},
+        {"id": 87, "title": "Mount Lycabettus", "description": "Hike or take a funicular to the top for a panoramic view of Athens.", "price": 0, "rating": 4.9},
+        {"id": 88, "title": "Panathenaic Stadium", "description": "Visit the historic stadium that hosted the first modern Olympic Games.", "price": 5, "rating": 4.7},
+        {"id": 89, "title": "Syntagma Square", "description": "Watch the Changing of the Guard at the Greek Parliament.", "price": 0, "rating": 4.6},
+        {"id": 90, "title": "Monastiraki Flea Market", "description": "Shop for souvenirs and antiques at the bustling market.", "price": 0, "rating": 4.6}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Venice",
+      "description": "The capital of northern Italy’s Veneto region, built on more than 100 small islands in a lagoon in the Adriatic Sea.",
+      "activities": [
+        {"id": 91, "title": "St. Mark's Basilica", "description": "Visit the cathedral church of the Roman Catholic Archdiocese of Venice.", "price": 3, "rating": 4.9},
+        {"id": 92, "title": "Doge's Palace", "description": "Tour the former residence of the Doge of Venice.", "price": 20, "rating": 4.8},
+        {"id": 93, "title": "Grand Canal", "description": "Take a boat ride along the main waterway of Venice.", "price": 0, "rating": 4.9},
+        {"id": 94, "title": "Rialto Bridge", "description": "See the oldest of the four bridges spanning the Grand Canal.", "price": 0, "rating": 4.8},
+        {"id": 95, "title": "Murano", "description": "Visit the series of islands known for their glassmaking.", "price": 0, "rating": 4.7},
+        {"id": 96, "title": "Burano", "description": "Explore the colorful island famous for its lace work.", "price": 0, "rating": 4.7},
+        {"id": 97, "title": "Peggy Guggenheim Collection", "description": "See the modern art collection in the Palazzo Venier dei Leoni.", "price": 15, "rating": 4.7},
+        {"id": 98, "title": "Teatro La Fenice", "description": "Attend a performance at the famous opera house.", "price": 35, "rating": 4.8},
+        {"id": 99, "title": "Bridge of Sighs", "description": "Visit the famous bridge connecting the Doge's Palace to the prisons.", "price": 0, "rating": 4.6},
+        {"id": 100, "title": "Gondola Ride", "description": "Enjoy a romantic gondola ride through the canals of Venice.", "price": 80, "rating": 4.9}
+      ]
+    }
+  ]
+  

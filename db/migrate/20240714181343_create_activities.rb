@@ -1,12 +1,12 @@
-class CreateActivities < ActiveRecord::Migration[5.2]
+class CreateActivities < ActiveRecord::Migration[6.1]
   def change
     create_table :activities do |t|
-      t.integer :city_id
+      t.references :city, null: false, foreign_key: true
       t.string :title
       t.string :description
       t.string :photo
       t.integer :price
-      t.references :city, foreign_key: true
+      t.decimal :rating
 
       t.timestamps
     end

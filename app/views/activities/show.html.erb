@@ -1,6 +1,5 @@
 <p id="notice"><%= notice %></p>
 
-
 <div class="card-trip">
   <img src="<%= @activity.photo %>" />
   <div class="card-trip-infos">
@@ -8,23 +7,22 @@
       <h2><%= @activity.title %></h2>
       <p><%= @activity.description %></p>
     </div>
-    <h2 class="card-trip-pricing">Цена: <%= @activity.price %> у.е.</h2>
+    <h2 class="card-trip-pricing">Price: <%= @activity.price %> USD</h2>
   </div>
 </div>
 
-<h1 class="title">С этой экскурсией также смотрели:</h1>
+<h1 class="title">People also watched:</h1>
 
 <div class="cards">
 
-  <% @activities.where(city_id: 1).first(6).each do |item| %>
+  <% @activities.where(city_id: @activity.city_id).first(6).each do |item| %>
     <%= link_to activity_path(item.id) do %>
-       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)">
-          <p><%= item.title %></p>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)">
+        <p><%= item.title %></p>
       </div>
     <% end %>
   <% end %>
 
 </div>
 
-<h1 class="title"><%= link_to 'На Главную', root_path %></h1>
-
+<h1 class="title"><%= link_to 'Back to Home', root_path %></h1>

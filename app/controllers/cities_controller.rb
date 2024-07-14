@@ -3,21 +3,16 @@ class CitiesController < ApplicationController
 
   # GET /cities
   def index
-# All cities here:
+    # All cities here:
     @cities = City.all
-# All activities here:
+    # All activities here:
     @activities = Activity.all
   end
 
   # GET /cities/1
   def show
-    @activities = Activity.all
-  end
-
-  def city_views
-    @city.activities.each do |item|
-      @city.view_id += item.view_id
-    end
+    @activities = @city.activities
+    calculate_city_views
   end
 
   # GET /cities/new
@@ -56,13 +51,19 @@ class CitiesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_city
-      @city = City.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def city_params
-      params.require(:city).permit(:name, :photo)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_city
+    @city = City.find(params[:id])
+  end
+
+  # Calculate total views for the city
+  def calculate_city_views
+    @city.view_id = @city.activities.sum(:view_id)
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def city_params
+    params.require(:city).permit(:name, :photo, :description)
+  end
 end
