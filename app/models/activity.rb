@@ -37,9 +37,16 @@ class Activity < ApplicationRecord
   end
 end
 
-# Recreate the index with the new settings and mappings
-Activity.__elasticsearch__.client.indices.delete index: Activity.index_name rescue nil
-Activity.__elasticsearch__.client.indices.create \
+# Ensure index is created with the new settings and mappings
+begin
+  Activity.__elasticsearch__.client.indices.delete index: Activity.index_name
+rescue Elasticsearch::Transport::Transport::Errors::NotFound
+  # Ignore if the index does not exist
+end
+
+Activity.__elasticsearch__.client.indices.create(
   index: Activity.index_name,
   body: { settings: Activity.settings.to_hash, mappings: Activity.mappings.to_hash }
+)
+
 Activity.import

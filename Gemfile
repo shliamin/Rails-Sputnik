@@ -32,8 +32,9 @@ gem 'leaflet-rails'
 gem 'httparty'
 gem 'dotenv-rails', groups: [:development, :test]
 
-gem 'elasticsearch-model'
-gem 'elasticsearch-rails'
+gem 'elasticsearch-model', '~> 7.2'
+gem 'elasticsearch-rails', '~> 7.2'
+
 
 
 
