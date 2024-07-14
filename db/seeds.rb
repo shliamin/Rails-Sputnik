@@ -41,7 +41,7 @@ cities_activities.each do |city|
       price: activity['price'], 
       rating: activity['rating'], 
       city_id: created_city.id,
-      view_id: activity['view_id']  # Убедитесь, что это поле добавляется
+      view_id: activity['view_id']
     )
   end
 end

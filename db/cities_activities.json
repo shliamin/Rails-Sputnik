@@ -155,7 +155,7 @@
     {
       "id": 10,
       "name": "Venice",
-      "description": "The capital of northern Italy’s Veneto region, built on more than 100 small islands in a lagoon in the Adriatic Sea.",
+      "description": "The capital of northern Italy's Veneto region, built on more than 100 small islands in a lagoon in the Adriatic Sea.",
       "activities": [
         {"id": 91, "title": "St. Mark's Basilica", "description": "Visit the cathedral church of the Roman Catholic Archdiocese of Venice.", "price": 3, "rating": 4.9},
         {"id": 92, "title": "Doge's Palace", "description": "Tour the former residence of the Doge of Venice.", "price": 20, "rating": 4.8},
