@@ -1,13 +1,14 @@
 require 'json'
 require 'open-uri'
 require 'httparty'
-require 'dotenv/load'
+require 'cgi'
 
 PEXELS_API_KEY = ENV['PEXELS_API_KEY']
 
 # Get images from Pexels
 def get_photo(query)
-  url = "https://api.pexels.com/v1/search?query=#{query}&orientation=landscape&per_page=1"
+  encoded_query = CGI.escape(query)
+  url = "https://api.pexels.com/v1/search?query=#{encoded_query}&orientation=landscape&per_page=1"
   response = HTTParty.get(url, headers: { "Authorization" => PEXELS_API_KEY })
   data = JSON.parse(response.body)
   return data["photos"][0]["src"]["large"] if data["photos"] && data["photos"].any?
