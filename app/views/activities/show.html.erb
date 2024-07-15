@@ -1,28 +1,31 @@
-<div class="card-trip">
-  <img src="<%= @activity.photo %>" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @activity.title %></h2>
-      <p><%= @activity.description %></p>
-      <p><strong>Place:</strong> <span style="color: blue;"><%= @activity.place %></span></p>
-      <p><strong>Theme:</strong> <span style="color: blue;"><%= @activity.theme %></p>
-      <p><strong>Duration:</strong> <span style="color: blue;"><%= @activity.duration %></p>
-      <p><strong>Rating:</strong> <span style="color: blue;"><%= @activity.rating %></p>
-      <p><strong>Price:</strong> <span style="color: blue;"><%= @activity.price %></p>
+<div class="container">
+  <div class="card-trip">
+    <img src="<%= @activity.photo %>" />
+    <div class="card-trip-infos">
+      <div>
+        <h2><%= @activity.title %></h2>
+        <p><%= @activity.description %></p>
+        <p><strong>Place:</strong> <span style="color: blue;"><%= @activity.place %></span></p>
+        <p><strong>Theme:</strong> <span style="color: blue;"><%= @activity.theme %></span></p>
+        <p><strong>Duration:</strong> <span style="color: blue;"><%= @activity.duration %></span></p>
+        <p><strong>Rating:</strong> <span style="color: blue;"><%= @activity.rating %></span></p>
+        <p><strong>Price:</strong> <span style="color: blue;"><%= @activity.price %></span></p>
+      </div>
     </div>
   </div>
-</div>
 
-<h1 class="title">Recommended for you:</h1>
-
-<div class="cards">
-  <% @recommended_activities.each do |item| %>
-    <%= link_to activity_path(item.id) do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)">
-        <p><%= item.title %></p>
-      </div>
-    <% end %>
-  <% end %>
+  <div class="recommended">
+    <h1 class="title">Recommended for you:</h1>
+    <div class="cards">
+      <% @recommended_activities.each do |item| %>
+        <%= link_to activity_path(item.id) do %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)">
+            <p><%= item.title %></p>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
 </div>
 
 <h1 class="title"><%= link_to 'Back to Home', root_path %></h1>

@@ -167,3 +167,49 @@
     border-color: #ddd;
   }
   
+
+
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card-trip {
+    flex: 1;
+    max-width: 60%;
+    margin-right: 20px;
+  }
+  
+  .recommended {
+    flex: 1;
+    max-width: 35%;
+  }
+  
+  .card-trip img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .card-trip-infos {
+    padding: 10px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .card-category {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2em;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+  }
+  
