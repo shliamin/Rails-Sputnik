@@ -33,9 +33,16 @@ class ActivitiesController < ApplicationController
 
   def recommend_activities(visitor_id)
     pyimport :sys
+    pyimport :os
+
+    # Set the correct path
+    os.chdir('/myapp/lib/python')
+    sys.path.append('/myapp/lib/python')
+
+    # Import the recommend module
     pyimport :recommend
 
-    sys.argv = ['lib/python/recommend.py', visitor_id.to_s]
+    sys.argv = ['recommend.py', visitor_id.to_s]
     recommendations = recommend.main()
 
     activity_ids = recommendations.to_a
