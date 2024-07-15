@@ -6,7 +6,16 @@
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-container">
-    <%= f.error_notification %>
+    <% if resource.errors.any? %>
+      <div class="error-messages">
+        <h4><%= pluralize(resource.errors.count, "error") %> prohibited this visitor from being saved:</h4>
+        <ul>
+          <% resource.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
     <div class="field">
       <%= f.label :email %><br />
