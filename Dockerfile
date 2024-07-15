@@ -1,8 +1,13 @@
+# Dockerfile
+
 # Use the official Ruby image from Docker Hub
 FROM ruby:3.1.2
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y curl gnupg build-essential libpq-dev
+RUN apt-get update -qq && apt-get install -y curl gnupg build-essential libpq-dev python3-pip
+
+# Install Python dependencies
+RUN pip3 install pandas psycopg2-binary python-dotenv
 
 # Install Node.js and Yarn
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
@@ -10,10 +15,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update && apt-get install -y nodejs yarn \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-# Install Python and required packages
-RUN apt-get install -y python3-pip
-RUN pip3 install pandas psycopg2-binary python-dotenv
 
 # Set the working directory
 WORKDIR /myapp
@@ -46,7 +47,7 @@ RUN rm -rf /myapp/tmp/cache
 RUN RAILS_ENV=production bundle exec rails assets:precompile
 
 # Copy the Python script
-COPY lib/recommend.py /myapp/lib/recommend.py
+COPY lib/python/recommend.py /myapp/lib/python/recommend.py
 
 # Set the command to run the application
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
