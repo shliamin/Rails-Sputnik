@@ -33,7 +33,18 @@ cities_activities.each do |city|
   city['activities'].each do |activity|
     puts "Creating activity: #{activity['title']} in #{city['name']}"
     activity_photo = get_photo(activity['title'])
-    Activity.create(id: activity['id'], title: activity['title'], description: activity['description'], photo: activity_photo, price: activity['price'], rating: activity['rating'], city_id: created_city.id)
+    Activity.create(
+      id: activity['id'],
+      title: activity['title'],
+      description: activity['description'],
+      photo: activity_photo,
+      price: activity['price'],
+      rating: activity['rating'],
+      city_id: created_city.id,
+      place: activity['place'], 
+      theme: activity['theme'], 
+      duration: activity['duration'] 
+    )
   end
 end
 
