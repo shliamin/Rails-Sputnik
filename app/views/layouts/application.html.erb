@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -14,7 +14,23 @@
       <div class="branding">
         <h1>Efim Shliamin</h1>
       </div>
+      <div class="nav-bar">
+        <% if visitor_signed_in? %>
+          <%= link_to "Sign Out", destroy_visitor_session_path, method: :delete, class: 'btn btn-primary' %>
+        <% else %>
+          <%= link_to "Sign In", new_visitor_session_path, class: 'btn btn-primary' %>
+          <%= link_to "Sign Up", new_visitor_registration_path, class: 'btn btn-secondary' %>
+        <% end %>
+      </div>
     </div>
-    <%= yield %>
+    <div class="container">
+      <% if notice %>
+        <div class="alert alert-notice"><%= notice %></div>
+      <% end %>
+      <% if alert %>
+        <div class="alert alert-alert"><%= alert %></div>
+      <% end %>
+      <%= yield %>
+    </div>
   </body>
 </html>
