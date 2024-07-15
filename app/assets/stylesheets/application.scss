@@ -168,6 +168,17 @@
   }
   
 
+.container-show{
+ display: flex;
+}
 
+.cards-show{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
 
-  
+.recommended{
+    flex: 1;
+    max-width: 80%;
+}
