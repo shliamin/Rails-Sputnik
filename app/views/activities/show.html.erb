@@ -4,6 +4,9 @@
     <div>
       <h2><%= @activity.title %></h2>
       <p><%= @activity.description %></p>
+      <p><strong>Place:</strong> <%= @activity.place %></p>
+      <p><strong>Theme:</strong> <%= @activity.theme %></p>
+      <p><strong>Duration:</strong> <%= @activity.duration %></p>
     </div>
     <h2 class="card-trip-pricing">Price: <%= @activity.price %> USD</h2>
     <h2 class="card-trip-rating">Rating: <%= @activity.rating %> </h2>
@@ -23,4 +26,3 @@
 </div>
 
 <h1 class="title"><%= link_to 'Back to Home', root_path %></h1>
-

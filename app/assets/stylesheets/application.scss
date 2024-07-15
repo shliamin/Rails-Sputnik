@@ -6,7 +6,15 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap');
 
 
-
+.card-trip-infos p {
+    margin: 0;
+    padding: 5px 0;
+  }
+  
+  .card-trip-pricing, .card-trip-rating {
+    margin-top: 10px;
+  }
+  
 
 
 .form-container {
