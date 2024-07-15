@@ -12,6 +12,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @activities = Activity.all 
     if visitor_signed_in?
       current_visitor.activity_views.create(activity: @activity)
     end
