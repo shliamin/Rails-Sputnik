@@ -1,6 +1,6 @@
 class Activity < ApplicationRecord
   belongs_to :city
-  has_many :activity_views
+  has_many :activity_views, dependent: :destroy
   has_many :viewing_visitors, through: :activity_views, source: :visitor
 
   # Validations
@@ -9,4 +9,7 @@ class Activity < ApplicationRecord
   validates :photo, presence: true
   validates :price, presence: true, numericality: { greater_than_or_equal_to: 0 }
   validates :rating, numericality: { greater_than_or_equal_to: 0, less_than_or_equal_to: 5 }
+  validates :place, presence: true
+  validates :theme, presence: true
+  validates :duration, presence: true
 end
