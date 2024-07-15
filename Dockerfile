@@ -1,13 +1,17 @@
-# Dockerfile
-
 # Use the official Ruby image from Docker Hub
 FROM ruby:3.1.2
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y curl gnupg build-essential libpq-dev python3-pip
+RUN apt-get update -qq && apt-get install -y \
+    curl \
+    gnupg \
+    build-essential \
+    libpq-dev \
+    python3-pip
 
 # Install Python dependencies
-RUN pip3 install pandas psycopg2-binary python-dotenv
+COPY requirements.txt /myapp/requirements.txt
+RUN pip3 install -r /myapp/requirements.txt
 
 # Install Node.js and Yarn
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \

@@ -9,7 +9,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = Activity.all
-    @recommended_activities = Activity.joins(:activity_views).group('activities.id').order('COUNT(activity_views.id) DESC').limit(5)
+    @recommended_activities = recommend_activities(current_visitor.id)
   end
 
   def show
@@ -17,10 +17,8 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all 
     if visitor_signed_in?
       current_visitor.activity_views.create(activity: @activity)
-      @recommended_activities = recommend_activities(current_visitor.id)
-    else
-      @recommended_activities = []
     end
+    @recommended_activities = recommend_activities(current_visitor.id)
   end
 
   private
@@ -35,10 +33,17 @@ class ActivitiesController < ApplicationController
 
   def recommend_activities(visitor_id)
     pyimport :sys
+    pyimport :os
+
+    # Set the correct path
+    os.chdir('/myapp/lib/python')
+    sys.path.append('/myapp/lib/python')
+
+    # Import the recommend module
     pyimport :recommend
 
-    sys.argv = ['lib/python/recommend.py', visitor_id.to_s]
-    recommendations = recommend.get_recommendations_for_user(visitor_id)
+    sys.argv = ['recommend.py', visitor_id.to_s]
+    recommendations = recommend.main()
 
     activity_ids = recommendations.to_a
     Activity.where(id: activity_ids)
