@@ -2,7 +2,10 @@
 FROM ruby:3.1.2
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y curl gnupg build-essential libpq-dev
+RUN apt-get update -qq && apt-get install -y curl gnupg build-essential libpq-dev python3 python3-pip
+
+# Install Python packages
+RUN pip3 install pandas psycopg2-binary python-dotenv
 
 # Install Node.js and Yarn
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
@@ -40,6 +43,9 @@ RUN rm -rf /myapp/tmp/cache
 
 # Precompile assets
 RUN RAILS_ENV=production bundle exec rails assets:precompile
+
+# Copy the Python script
+COPY lib/recommend.py /myapp/lib/recommend.py
 
 # Set the command to run the application
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]

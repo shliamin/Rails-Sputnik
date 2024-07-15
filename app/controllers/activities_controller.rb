@@ -1,4 +1,6 @@
 # app/controllers/activities_controller.rb
+require 'pycall/import'
+include PyCall::Import
 
 class ActivitiesController < ApplicationController
   before_action :authenticate_visitor!
@@ -15,6 +17,9 @@ class ActivitiesController < ApplicationController
     @activities = Activity.all 
     if visitor_signed_in?
       current_visitor.activity_views.create(activity: @activity)
+      @recommended_activities = recommend_activities(current_visitor.id)
+    else
+      @recommended_activities = []
     end
   end
 
@@ -26,5 +31,14 @@ class ActivitiesController < ApplicationController
 
   def set_city
     @city = @activity.city
+  end
+
+  def recommend_activities(visitor_id)
+    pyimport :sys
+    pyimport :recommend
+
+    recommendations = recommend.get_recommendations(visitor_id)
+    activity_ids = recommendations.to_a
+    Activity.where(id: activity_ids)
   end
 end

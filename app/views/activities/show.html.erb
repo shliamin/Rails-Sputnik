@@ -10,10 +10,10 @@
   </div>
 </div>
 
-<h1 class="title">People also watched:</h1>
+<h1 class="title">You might also like:</h1>
 
 <div class="cards">
-  <% @activities.where(city_id: @activity.city_id).first(6).each do |item| %>
+  <% @recommended_activities.each do |item| %>
     <%= link_to activity_path(item.id) do %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= item.photo %>)">
         <p><%= item.title %></p>
