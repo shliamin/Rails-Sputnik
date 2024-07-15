@@ -14,6 +14,7 @@
       <div class="branding">
         <h1>Efim Shliamin</h1>
       </div>
+      <% unless ['new_visitor_session_path', 'new_visitor_registration_path', 'edit_visitor_registration_path', 'new_visitor_password_path', 'edit_visitor_password_path'].include?(controller.action_name) %>
       <div class="nav">
         <% if visitor_signed_in? %>
           <%= link_to "Log out", destroy_visitor_session_path, method: :delete %>
@@ -21,6 +22,7 @@
           <%= link_to "Log in", new_visitor_session_path %>
         <% end %>
       </div>
+      <% end %>
     </div>
     <%= yield %>
   </body>
