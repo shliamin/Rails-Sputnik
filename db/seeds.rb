@@ -16,11 +16,12 @@ def get_photo(query)
 end
 
 # Clear existing data
-Activity.delete_all
-City.delete_all
+ActivityView.delete_all 
+Activity.delete_all 
+City.delete_all 
 
 # Downloading JSON file with cities and activities 
-file_path = Rails.root.join('db', 'cities_activities.json')
+file_path = Rails.root.join('db', 'updated_cities_activities.json')
 cities_activities = JSON.parse(File.read(file_path))
 
 puts "Creating cities and activities database"
