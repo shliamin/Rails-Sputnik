@@ -18,5 +18,4 @@ module Sputnik
   end
 end
 
-# Ensure Elasticsearch is required before initializers
-require 'elasticsearch/model'
+

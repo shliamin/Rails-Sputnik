@@ -1,10 +1,14 @@
+# config/routes.rb
+
 Rails.application.routes.draw do
   root to: 'cities#index'
-  resources :cities, except: :index do
+  devise_for :visitors
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :cities, except: :index do
     resources :activities
   end
 
- resources :activities, only: [ :show, :edit, :update, :destroy ]
+  resources :activities, only: [:show, :edit, :update, :destroy]
+
+  get 'home', to: 'home#index'
 end
