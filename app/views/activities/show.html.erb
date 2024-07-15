@@ -4,12 +4,12 @@
     <div>
       <h2><%= @activity.title %></h2>
       <p><%= @activity.description %></p>
-      <p><strong>Place:</strong> <%= @activity.place %></p>
-      <p><strong>Theme:</strong> <%= @activity.theme %></p>
-      <p><strong>Duration:</strong> <%= @activity.duration %></p>
+      <p><strong>Place:</strong> <span style="color: blue;"><%= @activity.place %></span></p>
+      <p><strong>Theme:</strong> <span style="color: blue;"><%= @activity.theme %></p>
+      <p><strong>Duration:</strong> <span style="color: blue;"><%= @activity.duration %></p>
+      <p><strong>Rating:</strong> <span style="color: blue;"><%= @activity.rating %></p>
+      <p><strong>Price:</strong> <span style="color: blue;"><%= @activity.price %></p>
     </div>
-    <h2 class="card-trip-pricing">Price: <%= @activity.price %> USD</h2>
-    <h2 class="card-trip-rating">Rating: <%= @activity.rating %> </h2>
   </div>
 </div>
 
