@@ -21,3 +21,78 @@
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 5px;
   }
+
+
+
+
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .field {
+    margin-bottom: 15px;
+  }
+  
+  .field label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .field input[type="email"],
+  .field input[type="password"],
+  .field input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .actions {
+    text-align: center;
+  }
+  
+  .actions input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .actions input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  .notice,
+  .alert {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  
+  .notice {
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+  }
+  
+  .alert {
+    background-color: #f2dede;
+    color: #a94442;
+    border: 1px solid #ebccd1;
+    border-radius: 4px;
+  }
+  
