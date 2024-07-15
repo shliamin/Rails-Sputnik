@@ -2,10 +2,7 @@
 FROM ruby:3.1.2
 
 # Install dependencies
-RUN apt-get update -qq && apt-get install -y curl gnupg build-essential libpq-dev python3 python3-pip
-
-# Install Python packages
-RUN pip3 install pandas psycopg2-binary python-dotenv
+RUN apt-get update -qq && apt-get install -y curl gnupg build-essential libpq-dev
 
 # Install Node.js and Yarn
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
@@ -13,6 +10,10 @@ RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
     && echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update && apt-get install -y nodejs yarn \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# Install Python and required packages
+RUN apt-get install -y python3-pip
+RUN pip3 install pandas psycopg2-binary python-dotenv
 
 # Set the working directory
 WORKDIR /myapp
