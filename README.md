@@ -1,104 +1,46 @@
-# Sputnik
+# Sputnik Activity Recommendation System
 
 ### Efim Shliamin
 
 ## Overview
 
-The Sputnik project is a comprehensive Ruby on Rails application designed to showcase backend services integration and database management. It is ideal for developers looking to deepen their understanding of complex backend systems and how they interact with different technologies.
+The Sputnik Activity Recommendation System is a Ruby on Rails application that integrates a machine learning-based recommendation engine to suggest activities to users based on their previous interactions and the content features of the activities. This project leverages a hybrid recommendation approach combining collaborative filtering and content-based filtering.
 
 ## Features
 
-- Detailed examples of backend integrations.
-- Interaction with multiple types of databases.
-- Implementation of background jobs and caching.
+- **User Authentication**: Users can sign up, log in, and log out.
+- **Activity Views**: Users can view detailed information about various activities.
+- **Rating System**: Users can rate activities.
+- **Recommendation System**: Provides personalized activity recommendations to users.
 
-## Technology Stack
+## Machine Learning
 
-- Ruby on Rails
-- PostgreSQL
-- Redis
-- Sidekiq
+The recommendation system is built using a combination of collaborative filtering and content-based filtering. The key steps include:
 
-## Getting Started
+1. **Data Loading**: 
+   - Data is loaded from a PostgreSQL database hosted on Supabase.
+   - The tables `activity_views` and `activities` are loaded into pandas DataFrames.
 
-### Prerequisites
+2. **Data Processing**:
+   - The `activity_views` table is merged with the `activities` table to obtain detailed activity information.
+   - Vector representations for activities are created based on features like price, rating, place, theme, and duration.
 
-This project requires Ruby, Rails, PostgreSQL, Redis, and Sidekiq. Ensure these are installed and properly configured on your system.
+3. **Model Training**:
+   - A k-NN model is used to find similar activities.
+   - A linear regression model is trained to predict user ratings based on activity features.
 
-### Installation
+4. **Hybrid Recommendation**:
+   - The system recommends activities by combining the collaborative score (how many times an activity is viewed) and the content score (predicted rating) using a weighted average.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/shliamin/Rails-Sputnik.git
-   cd Rails-Sputnik
-   ```
-2. Install the required gems:
-   ```bash
-   bundle install
-   ```
-3. Set up the database:
-   ```bash
-   rails db:create
-   rails db:migrate
-   ```
-4. Start the server:
-   ```bash
-   rails server
-   ```
 
-   ### Usage
+## Usage
 
-The Sputnik application is designed to demonstrate complex backend operations including database interactions, job queues, and caching mechanisms. Here's how you can interact with it:
+- Sign up and log in to the application.
+- View and rate various activities.
+- Receive personalized recommendations based on your activity interactions.
 
-1. **Accessing the Web Interface:**
-   - Navigate to `http://localhost:3000` to view the main interface.
-   - Utilize the UI to interact with various backend functionalities.
+## Contributing
 
-2. **API Endpoints:**
-   - Send requests to RESTful endpoints documented in `routes.rb` to test API interactions.
-   - Example: `curl http://localhost:3000/api/v1/resources`
-
-3. **Background Jobs:**
-   - Trigger background jobs via the UI or directly through the Rails console.
-   - Monitor job status through the Sidekiq dashboard at `http://localhost:3000/sidekiq`
-
-4. **Database Operations:**
-   - Perform CRUD operations on the database through the provided interfaces or Rails console.
-   - Example database query in Rails console: `User.first`
-
-5. **Testing Cache and Services:**
-   - Test caching mechanisms by accessing repeated data requests and observing performance improvements.
-   - Interact with integrated services like Redis by observing the caching of query results.
-
-These steps will help you explore the functionalities of the Rails-Sputnik application, demonstrating real-world usage of Rails in a complex backend environment.
-
-### Contributing
-
-We are excited to collaborate with you! Here are some guidelines to help you contribute to the Sputnik project:
-
-1. **Fork the Repository:**
-   - Start by forking the repository and cloning it to your local machine.
-
-2. **Create a Branch:**
-   - Create a new branch for each feature or improvement to ensure the master branch remains stable.
-   - Branch names should be descriptive, e.g., `feature/add-login` or `fix/database-issue`.
-
-3. **Develop:**
-   - Make your changes locally, ensuring you follow the project's code style and best practices.
-   - Write tests for your changes to ensure reliability and ease future maintenance.
-
-4. **Pull Request:**
-   - Push your branch to your fork and open a pull request to the original repository.
-   - Provide a descriptive title and summary of your changes. Include any relevant issue numbers.
-
-5. **Code Review:**
-   - Participate in code review if your pull request receives comments.
-   - Make necessary revisions to your submissions based on feedback.
-
-6. **Merge:**
-   - Once your pull request is approved, it will be merged into the master branch.
-
-By following these steps, you can contribute effectively and help improve the functionality and robustness of the Sputnik application.
-
+Contributions are welcome! Please create a pull request or submit an issue to discuss any changes.
 
 
