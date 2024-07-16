@@ -21,10 +21,10 @@ class ActivitiesController < ApplicationController
   end
 
   def update
-    if visitor_signed_in? && params[:user_rating]
+    if visitor_signed_in? && params[:activity_view][:user_rating]
       activity_view = current_visitor.activity_views.find_by(activity: @activity)
       if activity_view
-        activity_view.update(user_rating: params[:user_rating])
+        activity_view.update(user_rating: params[:activity_view][:user_rating])
       else
         current_visitor.activity_views.create(
           activity: @activity,
@@ -34,7 +34,7 @@ class ActivitiesController < ApplicationController
           place: @activity.place,
           theme: @activity.theme,
           duration: @activity.duration,
-          user_rating: params[:user_rating]
+          user_rating: params[:activity_view][:user_rating]
         )
       end
     end
