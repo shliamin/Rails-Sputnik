@@ -2,7 +2,7 @@
   <div class="card-trip">
     <img src="<%= @activity.photo %>" />
     <div class="card-trip-infos">
-      <div>
+      <div class=activity-description>
         <h2><%= @activity.title %></h2>
         <p><%= @activity.description %></p>
         <p><strong>Place:</strong> <span style="color: blue;"><%= @activity.place %></span></p>
@@ -10,17 +10,17 @@
         <p><strong>Duration:</strong> <span style="color: blue;"><%= @activity.duration %></span></p>
         <p><strong>Rating:</strong> <span style="color: blue;"><%= @activity.rating %></span></p>
         <p><strong>Price:</strong> <span style="color: blue;"><%= @activity.price %></span></p>
-        <div class="user-rating" style="margin-top: 20px;">
-          <%= form_with model: @activity_view, url: activity_path(@activity), method: :patch, local: true do |form| %>
-            <div class="field">
-              <%= form.label :user_rating, "Your Rating" %>
-              <%= form.number_field :user_rating, step: 0.1, min: 0, max: 5 %>
-            </div>
-            <div class="actions">
-              <%= form.submit "Submit Rating" %>
-            </div>
-          <% end %>
-        </div>
+      </div>
+      <div class="user-rating" style="margin-top: 20px;">
+        <%= form_with model: @activity_view, url: activity_path(@activity), method: :patch, local: true do |form| %>
+          <div class="field">
+            <%= form.label :user_rating, "Your Rating" %>
+            <%= form.number_field :user_rating, step: 0.1, min: 0, max: 5 %>
+          </div>
+          <div class="actions">
+            <%= form.submit "Submit Rating" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
