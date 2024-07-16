@@ -10,7 +10,7 @@
         <p><strong>Duration:</strong> <span style="color: blue;"><%= @activity.duration %></span></p>
         <p><strong>Rating:</strong> <span style="color: blue;"><%= @activity.rating %></span></p>
         <p><strong>Price:</strong> <span style="color: blue;"><%= @activity.price %></span></p>
-        <div class="user-rating">
+        <div class="user-rating" style="margin-top: 20px;">
           <%= form_with model: @activity_view, url: activity_path(@activity), method: :patch, local: true do |form| %>
             <div class="field">
               <%= form.label :user_rating, "Your Rating" %>
