@@ -13,10 +13,17 @@ class ActivitiesController < ApplicationController
   end
 
   def show
-    @activity = Activity.find(params[:id])
     @activities = Activity.all 
     if visitor_signed_in?
-      current_visitor.activity_views.create(activity: @activity)
+      current_visitor.activity_views.create(
+        activity: @activity,
+        title: @activity.title,
+        price: @activity.price,
+        rating: @activity.rating,
+        place: @activity.place,
+        theme: @activity.theme,
+        duration: @activity.duration
+      )
     end
     @recommended_activities = recommend_activities(current_visitor.id)
   end
