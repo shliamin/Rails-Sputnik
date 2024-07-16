@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_07_16_124055) do
+ActiveRecord::Schema.define(version: 2024_07_16_133037) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_graphql"
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 2024_07_16_124055) do
     t.string "place"
     t.string "theme"
     t.string "duration"
+    t.decimal "user_rating"
     t.index ["activity_id"], name: "index_activity_views_on_activity_id"
     t.index ["visitor_id"], name: "index_activity_views_on_visitor_id"
   end

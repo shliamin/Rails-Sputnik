@@ -26,6 +26,18 @@
       <% end %>
     </div>
   </div>
+
+  <div class="user-rating">
+    <%= form_with url: activity_path(@activity), method: :post, local: true do |form| %>
+      <div class="field">
+        <%= form.label :user_rating, "Your Rating" %>
+        <%= form.number_field :user_rating, step: 0.1, min: 0, max: 5 %>
+      </div>
+      <div class="actions">
+        <%= form.submit "Submit Rating" %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <h1 class="title"><%= link_to 'Back to Home', root_path %></h1>
